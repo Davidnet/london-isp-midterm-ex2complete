@@ -2,14 +2,16 @@
 #
 #   make            # build combined/
 #   make serve      # build + serve at http://localhost:8123
-#   make clean      # remove combined/
+#   make zip        # build + package combined/ into a deployable zip
+#   make clean      # remove combined/ and the zip
 #   make submodules # init/update the git submodules
 
 BUILD := combined
+SITE  := london-isp-midterm-ex2complete
 EX2   := london-isp-midterm-ex2
 EX223 := london-isp-midterm-ex223
 
-.PHONY: all submodules build serve clean
+.PHONY: all submodules build serve zip clean
 
 all: build
 
@@ -35,5 +37,10 @@ serve: build
 	@echo ">> serving $(BUILD)/ at http://localhost:8123"
 	@python3 -m http.server 8123 --directory $(BUILD)
 
+zip: build
+	@rm -f $(SITE).zip
+	@cd $(BUILD) && zip -qr ../$(SITE).zip .
+	@echo ">> wrote $(SITE).zip ($$(du -h $(SITE).zip | awk '{print $$1}'))"
+
 clean:
-	@rm -rf $(BUILD)
+	@rm -rf $(BUILD) $(SITE).zip
