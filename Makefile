@@ -25,6 +25,10 @@ build: submodules clean
 	@cp -R $(EX223)/index.html $(EX223)/sketch.js $(EX223)/style.css \
 		$(EX223)/lib $(EX223)/assets $(EX223)/fonts "$(BUILD)/meyda/"
 	@cp site/index.html "$(BUILD)/index.html"
+	@# inject a "back to units" link into each app, pointing at the launcher
+	@for app in captcha meyda; do \
+		perl -0pi -e 'BEGIN{local $$/; open F,"site/back-button.html" or die; $$btn=<F>} s/(<body[^>]*>)/$$1\n$$btn/i' "$(BUILD)/$$app/index.html"; \
+	done
 	@echo ">> done. $(BUILD)/ size: $$(du -sh $(BUILD) | awk '{print $$1}')"
 
 serve: build
