@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ferric Units — Audio CAPTCHA + Meyda Visualisation</title>
+    <style>
+      :root {
+        --bg: #14171a;
+        --panel: #1c2126;
+        --line: #2b333a;
+        --text: #d7dee3;
+        --muted: #8a979f;
+        --accent: #4fd1b5;
+      }
+      * { box-sizing: border-box; margin: 0; }
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: system-ui, -apple-system, sans-serif;
+        min-height: 100vh;
+        display: grid;
+        place-content: center;
+        padding: 32px 24px;
+      }
+      h1 {
+        font-size: 22px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        text-align: center;
+      }
+      p.tag {
+        color: var(--muted);
+        text-align: center;
+        margin: 10px 0 36px;
+        font-size: 14px;
+      }
+      nav {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        max-width: 720px;
+      }
+      a.card {
+        display: block;
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        padding: 24px 22px;
+        text-decoration: none;
+        color: var(--text);
+        transition: border-color 0.15s, transform 0.15s;
+      }
+      a.card:hover {
+        border-color: var(--accent);
+        transform: translateY(-2px);
+      }
+      a.card .unit {
+        font-size: 11px;
+        letter-spacing: 0.16em;
+        color: var(--muted);
+        text-transform: uppercase;
+      }
+      a.card h2 {
+        font-size: 18px;
+        margin: 8px 0 10px;
+      }
+      a.card p {
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.5;
+      }
+      a.card .go {
+        display: inline-block;
+        margin-top: 16px;
+        color: var(--accent);
+        font-size: 13px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>Ferric Units</h1>
+      <p class="tag">Two p5.js instruments — pick one to launch.</p>
+      <nav>
+        <a class="card" href="captcha/">
+          <span class="unit">Unit 01</span>
+          <h2>Audio CAPTCHA</h2>
+          <p>Listen to a scrambled spoken challenge, then type the number heard after each word to verify.</p>
+          <span class="go">Launch →</span>
+        </a>
+        <a class="card" href="meyda/">
+          <span class="unit">Unit 02</span>
+          <h2>Meyda Audio Visualisation</h2>
+          <p>Sounds visualised live through Meyda audio features, with voice-command control over the scene.</p>
+          <span class="go">Launch →</span>
+        </a>
+      </nav>
+    </div>
+  </body>
+</html>
