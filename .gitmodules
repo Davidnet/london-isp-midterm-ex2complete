@@ -1,0 +1,6 @@
+[submodule "london-isp-midterm-ex2"]
+	path = london-isp-midterm-ex2
+	url = git@github.com:Davidnet/london-isp-midterm-ex2.git
+[submodule "london-isp-midterm-ex223"]
+	path = london-isp-midterm-ex223
+	url = git@github.com:Davidnet/london-isp-midterm-ex223.git
