@@ -3,6 +3,7 @@
 #   make            # build combined/
 #   make serve      # build + serve at http://localhost:8123
 #   make zip        # build + package combined/ into a deployable zip
+#   make report     # compile the written report to report/report.pdf
 #   make clean      # remove combined/ and the zip
 #   make submodules # init/update the git submodules
 
@@ -11,7 +12,7 @@ SITE  := london-isp-midterm-ex2complete
 EX2   := london-isp-midterm-ex2
 EX223 := london-isp-midterm-ex223
 
-.PHONY: all submodules build serve zip clean
+.PHONY: all submodules build serve zip report clean
 
 all: build
 
@@ -41,6 +42,9 @@ zip: build
 	@rm -f $(SITE).zip
 	@cd $(BUILD) && zip -qr ../$(SITE).zip .
 	@echo ">> wrote $(SITE).zip ($$(du -h $(SITE).zip | awk '{print $$1}'))"
+
+report:
+	@./report/build.sh
 
 clean:
 	@rm -rf $(BUILD) $(SITE).zip
