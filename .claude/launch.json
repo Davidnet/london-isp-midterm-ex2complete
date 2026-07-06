@@ -6,6 +6,12 @@
       "runtimeExecutable": "python3",
       "runtimeArgs": ["-m", "http.server", "8123", "--directory", "combined"],
       "port": 8123
+    },
+    {
+      "name": "shots",
+      "runtimeExecutable": "/Users/davidcardozo/.local/share/mise/installs/node/24.16.0/bin/node",
+      "runtimeArgs": ["report/serve-shots.js"],
+      "port": 8129
     }
   ]
 }
