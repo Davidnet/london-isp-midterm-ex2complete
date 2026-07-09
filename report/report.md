@@ -1,6 +1,8 @@
 ---
 title: "Exercise 2: Audio Visualisation with Meyda and a p5.speech Voice Controller"
-author: David Cardozo
+subtitle: |
+  (words: 499)\
+  Link: \textcolor{blue}{\url{https://hub.labs.coursera.org/connect/sharedphwuxhyd}}
 date: 5 July 2026
 documentclass: tufte-handout
 classoption: [nobib, nols, justified]
